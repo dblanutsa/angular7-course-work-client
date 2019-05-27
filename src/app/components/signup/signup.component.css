@@ -1,0 +1,17 @@
+.app-navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+.reg-form {
+  font-family: Raleway, sans-serif;
+}
+.reg-form {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.reg-form .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.login-btn {
+  margin-left: 50px;
+}

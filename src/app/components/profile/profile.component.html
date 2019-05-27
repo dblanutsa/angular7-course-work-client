@@ -1,0 +1,54 @@
+<div class="cotainer reg-form">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Profile</div>
+        <div class="card-body">
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group row">
+              <label for="firstName" class="col-md-4 col-form-label text-md-right">FirstName</label>
+              <div class="col-md-6">
+                <input type="text" id="firstName" class="form-control" [formControl]="firstName"
+                       maxlength="20"
+                >
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="lastName" class="col-md-4 col-form-label text-md-right">Last name</label>
+              <div class="col-md-6">
+                <input type="text" id="lastName" class="form-control" [formControl]="lastName"
+                       maxlength="20"
+                >
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
+              <div class="col-md-6">
+                <input type="text" id="email" class="form-control" [formControl]="email"
+                       required
+                       email
+                       appUniqueEmail
+                >
+                <span class="col-md-4 col-form-label text-md-right error-label"
+                      *ngIf="email.invalid && (email.dirty || email.touched)"
+                >
+                    E-Mail is invalid or alredy exists
+                  </span>
+              </div>
+            </div>
+
+            <div class="col-md-6 offset-md-4">
+              <button type="submit" class="btn btn-success" [disabled]="profileForm.invalid">
+                Update
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

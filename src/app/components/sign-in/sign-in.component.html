@@ -1,0 +1,46 @@
+<div class="cotainer login-form">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group row">
+              <label for="loginOrEmail" class="col-md-4 col-form-label text-md-right">Login or E-Mail</label>
+              <div class="col-md-6">
+                <input type="text" id="loginOrEmail" class="form-control" [formControl]="loginOrEmail"
+                       required
+                >
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+              <div class="col-md-6">
+                <input type="password" id="password" class="form-control" [formControl]="password"
+                       required
+                >
+                <span class="col-md-4 col-form-label text-md-right error-label"
+                      *ngIf="password.invalid && (password.dirty || password.touched)"
+                >
+
+                  </span>
+              </div>
+            </div>
+
+            <div class="col-md-6 offset-md-4">
+              <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">
+                Login
+              </button>
+
+              <button class="register-btn btn btn-primary" (click)="onRegister()">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
